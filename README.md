@@ -1,12 +1,15 @@
 # NUKEX🧹
 
-Simple CLI tool to search and list node_modules directories with their sizes.
+A fast and interactive CLI tool to find and clean up node_modules directories that are consuming disk space.
 
 ## Why NUKEX?
 
 -   🔍 Quickly find all node_modules directories eating up disk space
--   📏 Get accurate size measurements of each directory
--   🚀 Process large directory trees efficiently with parallel search
+-   📏 Get accurate size of each directory
+-   🚀 Process large directory trees efficiently with parallel processing
+-   ⚡ Smart directory skipping (.git, .venv, .yarn)
+-   🎯 Interactive selection for which directories to remove
+-   ✨ Safe deletion with confirmation prompts
 
 ## Setup
 
@@ -16,10 +19,10 @@ Build from source:
 make build
 ```
 
-or use pre-built binary from the `bin` directory
+or use pre-built binary
 
 ```bash
-./bin/nukex
+./nukex.exe
 ```
 
 ## Usage
@@ -34,11 +37,18 @@ Example:
 nukex ~/projects
 
 
-Found node_modules at: ~/projects/my-app/node_modules
-Size: 2.56 GB
+💫 Scanning ~/projects...
+💯 Nukex completed scanning...
 
-Found node_modules at: ~/projects/another-app/node_modules
-Size: 156.78 MB
+Found node_modules directories:
+📁 ~/projects/try/node_modules (2.56 GB)
+📁 ~/projects/test/node_modules (156.78 MB)
+
+? Select directories to clean up:
+  [x] ~/projects/my-app/node_modules
+  [ ] ~/projects/another-app/node_modules
+
+? Are you sure you want to delete these directories? [y/N]
 ```
 
 ## Features
@@ -51,3 +61,8 @@ Size: 156.78 MB
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first.
+
+## TODO
+
+-   Add advanced processing flags with viper
+-   Add size-based filtering options
