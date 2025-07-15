@@ -11,18 +11,60 @@ A fast and interactive CLI tool to find and clean up node_modules directories th
 -   🎯 Interactive selection for which directories to remove
 -   ✨ Safe deletion with confirmation prompts
 
-## Setup
+## Installation
 
-Build from source:
+### Prerequisites
+
+-   Go: 1.23 or higher
+
+### Build from Source
+
+1. Clone the repository:
+
+```bash
+git clone github.com/mrshabel/nukex
+cd nukex
+```
+
+2. Build the project:
 
 ```bash
 make build
 ```
 
-or use pre-built binary
+This will create a `bin/` directory with the binary for your current platform.
+
+### Pre-built Binaries
+
+Download the appropriate binary from the releases page:
+
+-   **Windows**: `nukex-windows-amd64.exe`
+-   **macOS Intel**: `nukex-darwin-amd64`
+-   **macOS Apple Silicon**: `nukex-darwin-arm64`
+-   **Linux**: `nukex-linux-amd64`
+-   **Linux ARM64**: `nukex-linux-arm64`
+
+### Cross-Platform Building
+
+To build for all supported platforms:
 
 ```bash
-./nukex.exe
+make build-all
+```
+
+Or build for a specific platform:
+
+```bash
+# windows 64-bit
+make build-windows
+# macOS intel
+make build-mac-intel
+# macOS apple silicon
+make build-mac-arm
+# linux 64-bit
+make build-linux
+# linux arm64
+make build-linux-arm
 ```
 
 ## Usage
